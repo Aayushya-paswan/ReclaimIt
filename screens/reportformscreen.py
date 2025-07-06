@@ -15,10 +15,8 @@ class ReportFormScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        # --- Main vertical layout ---
         self.main_layout = BoxLayout(orientation='vertical')
 
-        # --- Top bar with headline + report button ---
         top_bar = BoxLayout(size_hint=(1, None), height=60, padding=10, spacing=10)
 
         headline = Label(
@@ -38,25 +36,21 @@ class ReportFormScreen(Screen):
         top_bar.add_widget(headline)
         top_bar.add_widget(report_btn)
 
-        # --- Scrollable issues container ---
         self.scroll = ScrollView(size_hint=(1, 0.85))
         self.container = GridLayout(cols=1, spacing=15, padding=15, size_hint_y=None)
         self.container.bind(minimum_height=self.container.setter('height'))
         self.scroll.add_widget(self.container)
 
-        # --- Back Button ---
         back_btn = styled_button("← Back", (0.9, 0.9, 0.9, 1), text_color=(0, 0, 0, 1))
         back_btn.size_hint = (0.3, None)
         back_btn.height = 50
         back_btn.pos_hint = {'center_x': 0.5}
         back_btn.bind(on_press=self.go_back)
 
-        # Add everything to main_layout
         self.main_layout.add_widget(top_bar)
         self.main_layout.add_widget(self.scroll)
         self.main_layout.add_widget(back_btn)
 
-        # Use a background
         self.bg_layout = GradientBackground()
         self.bg_layout.add_widget(self.main_layout)
         self.add_widget(self.bg_layout)
@@ -99,7 +93,7 @@ class ReportFormScreen(Screen):
             height=80,
             halign='left',
             valign='top',
-            color=(0, 0, 0, 1)  # 🟢 Black color for text
+            color=(0, 0, 0, 1) 
         )
         label.bind(size=label.setter('text_size'))
         card.add_widget(label)
