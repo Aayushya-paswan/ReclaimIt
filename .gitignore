@@ -1,0 +1,28 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Buildozer
+.buildozer/
+bin/
+*.apk
+*.keystore
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+
+# Secrets
+secrets.json
+
+# Firebase credentials (if not using git-secret or env vars)
+Firebase_config.py
+
+# Logs
+*.log
+
+# SDL2 auto-generated files
+*.framework/
