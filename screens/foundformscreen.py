@@ -15,11 +15,11 @@ class FoundFormScreen(Screen):
         super().__init__(**kwargs)
         layout = GradientBackground()
 
-        # Main card
+        
         card = AnimatedCard(orientation='vertical', padding=30, spacing=25,
                             size_hint=(0.9, 0.88), pos_hint={'center_x': 0.5, 'center_y': 0.5})
 
-        # Title
+    
         title = Label(
             text='[b][color=#1A237E]Report a Found Item[/color][/b]',
             markup=True,
@@ -40,7 +40,6 @@ class FoundFormScreen(Screen):
         self.image_preview.bind(pos=lambda *_: setattr(self.rect, 'pos', self.image_preview.pos),
                                 size=lambda *_: setattr(self.rect, 'size', self.image_preview.size))
 
-        # Inputs
         self.image_url_input = styled_textinput("Paste image URL here...")
         self.image_url_input.bind(text=self.update_image_preview)
 
@@ -48,14 +47,12 @@ class FoundFormScreen(Screen):
         self.description_input.height = 100
         self.description_input.multiline = True
 
-        # Submit + Back buttons
         submit_btn = styled_button("Submit Found Item", (0.1, 0.6, 0.3, 1))
         submit_btn.bind(on_press=self.submit_found)
 
         back_btn = styled_button("Back", (0.85, 0.85, 0.85, 1), text_color=(0.1, 0.1, 0.1, 1))
         back_btn.bind(on_press=self.go_back)
 
-        # Add all to card
         for widget in [
             title,
             self.image_preview,
@@ -85,7 +82,6 @@ class FoundFormScreen(Screen):
             Firebase_config.add_found_item(image_url, description, email1)
             self.show_popup("Found item submitted successfully!", success=True)
 
-            # Reset form
             self.image_url_input.text = ""
             self.description_input.text = ""
             self.image_preview.source = ""
