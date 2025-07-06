@@ -1,0 +1,11 @@
+__pycache__/
+.idea/
+.buildozer/
+*.pyc
+*.pyo
+*.pyd
+*.apk
+*.log
+*.sqlite3
+*.db
+firebase_config.json
