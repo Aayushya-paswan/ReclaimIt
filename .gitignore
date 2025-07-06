@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __pycache__/
 .idea/
 .buildozer/
@@ -8,4 +9,33 @@ __pycache__/
 *.log
 *.sqlite3
 *.db
+=======
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# C extensions
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
+
+# PyCharm project settings
+.idea/
+
+# Kivy and Buildozer build files
+.buildozer/
+*.apk
+
+# Firebase config (if any)
+>>>>>>> b05e76264d18967ed5f680cba935bf4eeeb22125
 firebase_config.json
+"firebase_config.json" 
+"__pycache__/" 
+"*.pyc" 
