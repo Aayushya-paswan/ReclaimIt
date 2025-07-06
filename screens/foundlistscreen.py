@@ -20,7 +20,6 @@ class FoundlistScreen(Screen):
         super().__init__(**kwargs)
         self.layout = GradientBackground()
 
-        # Headline
         headline = Label(
             text='[b][color=#1E3A5F]Items Found on Campus[/color][/b]',
             markup=True,
@@ -39,7 +38,6 @@ class FoundlistScreen(Screen):
         self.container.bind(minimum_height=self.container.setter('height'))
         self.scroll.add_widget(self.container)
 
-        # Back Button
         back_btn = styled_button("← Back", (0.9, 0.9, 0.9, 1), text_color=(0, 0, 0, 1))
         back_btn.size_hint = (0.35, None)
         back_btn.height = 50
@@ -73,14 +71,12 @@ class FoundlistScreen(Screen):
         card = BoxLayout(orientation='vertical', spacing=12, padding=15,
                          size_hint=(1, None), height=400, opacity=0)
 
-        # Background style
         with card.canvas.before:
             Color(1, 1, 1, 0.94)
             rect = RoundedRectangle(radius=[25], pos=card.pos, size=card.size)
             card.bind(pos=lambda *_: setattr(rect, 'pos', card.pos),
                       size=lambda *_: setattr(rect, 'size', card.size))
 
-        # Card Content
         posted_by = item_data.get("posted_by", "Unknown")
         status_text = item_data.get('status', 'unknown').capitalize()
 
@@ -115,7 +111,6 @@ class FoundlistScreen(Screen):
             color=status_color
         )
 
-        # Add to card
         card.add_widget(image)
         card.add_widget(desc)
         card.add_widget(email_label)
