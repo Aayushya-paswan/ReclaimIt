@@ -16,7 +16,6 @@ class LostlistScreen(Screen):
         super().__init__(**kwargs)
         self.layout = GradientBackground()
 
-        # --- Stylish Headline ---
         headline = Label(
             text='[b][color=#222222]📋 List of Lost Items[/color][/b]',
             markup=True,
@@ -29,7 +28,6 @@ class LostlistScreen(Screen):
         headline.bind(size=headline.setter('text_size'))
         self.layout.add_widget(headline)
 
-        # --- Scrollable Lost Items Container ---
         self.scroll = ScrollView(size_hint=(1, 0.85), pos_hint={'center_x': 0.5})
         self.container = GridLayout(cols=1, spacing=20, padding=20, size_hint_y=None)
         self.container.bind(minimum_height=self.container.setter('height'))
@@ -85,11 +83,9 @@ class LostlistScreen(Screen):
         ee = item_data.get('posted_by', 'N/A')
         email_label.bind(size=email_label.setter('text_size'))
 
-        # --- Image ---
         image_url = item_data.get("image", "No Image")
         image = AsyncImage(source=image_url, size_hint=(1, 0.55), allow_stretch=True)
 
-        # --- Description ---
         desc = Label(
             text=f"[b][color=#D32F2F]{item_data.get('description', 'No Description')}[/color][/b]",
             markup=True,
@@ -100,7 +96,6 @@ class LostlistScreen(Screen):
         )
         desc.bind(size=desc.setter('text_size'))
 
-        # --- Status ---
         status_text = item_data.get('status', 'Unknown')
         status = Label(
             text=f"[b]Status:[/b] {status_text}",
@@ -110,7 +105,6 @@ class LostlistScreen(Screen):
             color=(0.2, 0.6, 0.2, 1)
         )
 
-        # --- Found Button ---
         found_btn = Button(
             text="✅ Click if you found it",
             background_color=(0.2, 0.7, 0.4, 1),
@@ -120,7 +114,6 @@ class LostlistScreen(Screen):
         )
         found_btn.bind(on_press=lambda instance: self.go_to_found_form(item_id))
 
-        # --- Add all widgets to card ---
         for widget in [email_label, image, desc, status, found_btn]:
             card.add_widget(widget)
 
