@@ -39,3 +39,7 @@ firebase_config.json
 "firebase_config.json" 
 "__pycache__/" 
 "*.pyc" 
+secrets.json 
+firebase_config.json 
+__pycache__/ 
+*.pyc 
