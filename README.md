@@ -1,4 +1,4 @@
-# ReclaimIt 🚀
+# ReclaimIt 
 
 **ReclaimIt** is a centralized mobile application built using **Kivy** (Python) designed for college campuses to streamline **Lost & Found** tracking and **Anonymous Issue Reporting**.
 
@@ -11,19 +11,22 @@
 
 -  **User Authentication**
   - Secure login & signup with Firebase backend
-  - OTP-based verification (optional)
+  - OTP-based verification for email
 
 - **Lost & Found Tracker**
   - Post lost/found items with images
   - Browse lists with filtering by category or date
+  - Image, description and status saved in firebase
 
 - 🛠**Anonymous Issue Reporting**
   - Raise concerns (hostel, academic, campus facilities)
   - Admin view for tracking and resolving complaints
 
 - **Media Uploads**
-  - Upload pictures for better identification
-  - Firebase Storage integration
+  - Upload pictures for better identification of objects which are being tracked
+  - Firebase Storage integration to store users and data of lost/found items
+  - 
+
 
 - **Smart UI/UX**
   - Animated Kivy interface with card-style screens
