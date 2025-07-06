@@ -4,7 +4,7 @@ import smtplib
 from email.message import EmailMessage
 from firebase_admin import credentials, db
 
-OTP_EXPIRY_SECONDS = 300  # 5 minutes
+OTP_EXPIRY_SECONDS = 300  
 SENDER_EMAIL = "programmingmaster45@gmail.com"
 SENDER_PASSWORD = "wuyn kbmc mtej eobw"
 
