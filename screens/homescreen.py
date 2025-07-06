@@ -14,9 +14,8 @@ class HomeScreen(Screen):
 
         self.card = AnimatedCard(orientation='vertical', padding=25, spacing=25,
                                  size_hint=(0.9, 0.72), pos_hint={'center_x': 0.5, 'center_y': 0.5})
-        self.card.opacity = 0  # animate later
+        self.card.opacity = 0  
 
-        # Headline (added later in on_enter with animation)
         self.headline = Label(
             text='',
             markup=True,
@@ -46,7 +45,7 @@ class HomeScreen(Screen):
         ]
 
         for btn, action in zip(self.btns, transitions):
-            btn.opacity = 0  # animate each button separately
+            btn.opacity = 0  
             btn.bind(on_press=action)
             self.card.add_widget(btn)
 
@@ -59,17 +58,14 @@ class HomeScreen(Screen):
         self.card.clear_widgets()
         self.card.add_widget(self.headline)
 
-        # Add buttons back
         for btn in self.btns:
             self.card.add_widget(btn)
 
-        # Animate the card fade-in
+      
         Animation(opacity=1, d=0.6, t='out_quad').start(self.card)
 
-        # Animate headline
         Animation(opacity=1, font_size=32, d=0.7, t='out_back').start(self.headline)
 
-        # Animate buttons with slight delays
         for i, btn in enumerate(self.btns):
             Animation(opacity=1, d=0.4, t='in_quad').start(btn)
 
